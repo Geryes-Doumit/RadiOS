@@ -2,7 +2,7 @@
 //  RadioDetailsView.swift
 //  RadiOS
 //
-//  Created by Geryes Doumit on 26/01/2025.
+//  Created by Geryes Doumit and Gauthier Cetingoz on 26/01/2025.
 //
 
 import SwiftUI
@@ -134,6 +134,9 @@ struct RadioDetailsView: View {
                 radioName = tempRadio!.title
                 radioCategory = tempRadio!.category
                 radioURL = tempRadio!.url
+                
+                let url = URL(string: radioURL)!
+                player = AVPlayer(url: url)
             }
         }
         
@@ -160,9 +163,6 @@ struct RadioDetailsView: View {
         if (radioURL.isEmpty) {
             return
         }
-        
-        let url = URL(string: radioURL)!
-        player = AVPlayer(url: url)
         
         if (isPlaying) {
             player?.pause()
