@@ -108,7 +108,9 @@ struct RadioDetailsView: View {
                 radioName = radio.title
                 radioCategory = radio.category
                 radioURL = radio.url
-                player = AVPlayer(url: URL(string: radio.url)!)
+                if let url = URL(string: radio.url) {
+                    player = AVPlayer(url: url)
+                }
             }
             .onDisappear{
                 player?.pause()
@@ -139,8 +141,9 @@ struct RadioDetailsView: View {
                 radio.category = tempRadio!.category
                 radio.url = tempRadio!.url
                 
-                let url = URL(string: radioURL)!
-                player = AVPlayer(url: url)
+                if let url = URL(string: radioURL) {
+                    player = AVPlayer(url: url)
+                }
             }
         }
         
