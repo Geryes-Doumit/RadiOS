@@ -7,11 +7,19 @@
 
 import Foundation
 
-class Radio: Identifiable {
+class Radio: Hashable, Identifiable {
+    static func == (lhs: Radio, rhs: Radio) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     let id : UUID
-    let title: String
-    let url: String
-    let category: String
+    var title: String
+    var url: String
+    var category: String
     
     // Pour créer une nouvelle radio, on passe un ID nil
     init(id: UUID?, title: String, url: String, category: String) {
@@ -25,7 +33,6 @@ class Radio: Identifiable {
         self.url = url
         self.category = category
     }
-    
     
     static func sortByCategory(_ orderedRadios: [Radio]) -> [CategoryRadios] {
         if (orderedRadios.isEmpty) {

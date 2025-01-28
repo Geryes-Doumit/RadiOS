@@ -49,7 +49,7 @@ struct RadioDetailsView: View {
                         .disabled(!isEditing)
                 }
             }
-            .navigationTitle(radioName)
+            .navigationTitle(radio.title)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing, content: {
                     if (!isPlaying) {
@@ -60,19 +60,19 @@ struct RadioDetailsView: View {
                                 Text("Delete")
                             }.alert("Delete \"" + radioName + "\"?", isPresented: $showDeleteDialog,
                                     actions: {
-                                VStack {
-                                    Button(action: {
-                                        showDeleteDialog = false
-                                    }) {
-                                        Text("Cancel")
+                                        VStack {
+                                            Button(action: {
+                                                showDeleteDialog = false
+                                            }) {
+                                                Text("Cancel")
+                                            }
+                                            Button(action: {
+                                                onDelete()
+                                            }) {
+                                                Text("Delete")
+                                            }
+                                        }
                                     }
-                                    Button(action: {
-                                        onDelete()
-                                    }) {
-                                        Text("Delete")
-                                    }
-                                }
-                            }
                             )
                             Button(action: {
                                 toggleEdit()
@@ -134,6 +134,10 @@ struct RadioDetailsView: View {
                 radioName = tempRadio!.title
                 radioCategory = tempRadio!.category
                 radioURL = tempRadio!.url
+                
+                radio.title = tempRadio!.title
+                radio.category = tempRadio!.category
+                radio.url = tempRadio!.url
                 
                 let url = URL(string: radioURL)!
                 player = AVPlayer(url: url)

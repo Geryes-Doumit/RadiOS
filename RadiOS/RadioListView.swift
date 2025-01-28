@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RadioListView: View {
     @State var radios: [CategoryRadios] = []
-    var randomRadio: Radio?
     
     var body: some View {
         NavigationStack {
@@ -35,12 +34,6 @@ struct RadioListView: View {
             }.navigationTitle(Text("Radios"))
                 .toolbar(content: {
                     HStack {
-//                        Button(action: {
-//                            goToRandomRadio()
-//                        }) {
-//                            Image(systemName: "shuffle")
-//                        }
-                        
                         NavigationLink(destination: AddRadioView()) {
                             Image(systemName: "plus")
                         }
@@ -50,13 +43,6 @@ struct RadioListView: View {
                     radios = getRadios()
                 }
         }
-    }
-    
-    private func goToRandomRadio() {
-        guard !radios.isEmpty else { return }
-        let randomIndex = Int.random(in: 0..<radios.count)
-        let firstRadioOfCategory = radios[randomIndex].radios.first!
-        
     }
 }
 
