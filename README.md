@@ -10,15 +10,15 @@ Voici les différents écrans de l'application :
 
 <table>
   <td>
-    <img width="484" alt="RadiOS-RadioList" src="https://github.com/user-attachments/assets/95535dd5-038e-4d98-b9c2-76b1b156b3d4" />
+    <img width="484" alt="RadiOS-ListRadios" src="https://github.com/user-attachments/assets/4a49c182-e707-4193-ac38-f3f994c19bd9" />
     <p align=center>Liste des radios ajoutées</p>
   </td>
   <td>
-    <img width="484" alt="RadiOS-AddRadio" src="https://github.com/user-attachments/assets/ba4d6925-1447-45a2-9631-c156f4ad9850" />
+    <img width="484" alt="RadiOS-AddRadio" src="https://github.com/user-attachments/assets/4e8c8620-f642-43b1-a89a-e55d3f4c8ffc" />
     <p align=center>Ecran d'ajout de radio</p>
   </td>
   <td>
-    <img width="484" alt="RadiOS-RadioDetails" src="https://github.com/user-attachments/assets/1b8c86ed-e86b-43cc-9017-21db08cd05f0" />
+    <img width="484" alt="RadiOS-RadioDetails" src="https://github.com/user-attachments/assets/f2d650c7-c286-4961-9b97-4dae90314174" />
     <p align=center>Ecran de détails d'un radio</p>
   </td>
 </table>
